@@ -1,11 +1,11 @@
 ---
 title: "Easy Dark Mode Setup in Flutter: Counter App Example"
-seoTitle: "Dark Mode Flutter: Counter App Guide"
+seoTitle: "Dark Mode Flutter: Counter App Example"
 seoDescription: "Implement dark mode in Flutter counter app using themes, toggle states, Riverpod state management; easy setup, minimal code alterations"
 datePublished: Tue Sep 05 2023 15:43:16 GMT+0000 (Coordinated Universal Time)
 cuid: clm6hclwp000b09mk6j9y4fmm
 slug: easy-dark-mode-setup-in-flutter-counter-app-example
-ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1693928555714/a5d0f4de-d8f0-4708-ac89-6140cf6f7961.gif
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1693929475990/3b70c15c-84d6-4c04-bbcd-523d2d730176.png
 tags: flutter, dark-mode
 
 ---
