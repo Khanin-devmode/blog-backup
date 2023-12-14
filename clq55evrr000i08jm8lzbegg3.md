@@ -1,0 +1,105 @@
+---
+title: "Fast and Easy Widgetbook Beginner's Guide"
+seoTitle: "Quick Widgetbook Guide for Beginners"
+seoDescription: "Master Widgetbook for Flutter: Streamline design reviews, documentation, and widget visualization with this beginner's Storybook-inspired package guid..."
+datePublished: Thu Dec 14 2023 12:00:10 GMT+0000 (Coordinated Universal Time)
+cuid: clq55evrr000i08jm8lzbegg3
+slug: fast-and-easy-widgetbook-beginners-guide
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1702538391187/f581edc8-9669-4825-9050-86d3aa5ce3c1.png
+tags: flutter, storybook, widgetbook
+
+---
+
+As a developer working in a team with a design system, having one place to do a design review and document how each widget in the system works can save time and reduce the redundancy of explaining the same thing over and over again. Widgetbook, inspired by Storybook, is built to address these inconveniences. I want to share how I got started with Widgetbook in a very simple and manual way so we can get a better understanding of how the package works. As a documentation tried to cover too much and had me go back and forth a few times. Let's get started by creating a Flutter project.
+
+## Create Flutter project
+
+```plaintext
+flutter create widgetbook_app
+```
+
+## Install Widgetbook Package
+
+```plaintext
+flutter pub add widgetbook
+```
+
+%[https://gist.github.com/Khanin-devmode/8305e1e2ec664a2282c6ed44ee8d23bf] 
+
+## Return `Widgetbook.material` instead of `MaterialApp` and Run it
+
+It is always a good practice to test building your project before adding any config or components, just to make sure our package and dependency work.
+
+%[https://gist.github.com/Khanin-devmode/c0174f9a623dfc2bc8660dcf85d211d8/d33c0197f9b7a1c9296213abf2657cb4a428a2fd] 
+
+At this point, you should be able to run a blank project of widgetbook.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1702537215070/f9fa8899-01da-45ba-a528-4255c563460b.png align="center")
+
+## Create folder structure
+
+You can easily understand the usage of each Widgetbook widget with the following structure. It is similar to creating folders in File Explorer of any operating system. And you can organize it however you like. But for this example, I will just keep it simple as follows.
+
+Folder &gt; Component &gt; Usercases
+
+WidgetbookFolder &gt; WidgetbookComponent &gt; WidgetbookUsecase
+
+A page to demonstrate widgets will be created in WidgetbookUsecase. I personally just returned a Scaffold widget and content to show in a body property or even A page as a Stateless/Stateful widget.
+
+%[https://gist.github.com/Khanin-devmode/c0174f9a623dfc2bc8660dcf85d211d8/ac8fb9c7576e5617e6b5ea43968f79eb30b8d820] 
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1702537184474/37e14da6-7d92-4590-9078-23f3454b66d9.png align="center")
+
+The code above is just an example of the structure of widgets and folders in the app to be displayed. When many use cases and components are added consider refactoring your code to better organize the project.
+
+## Addons
+
+Addons are ready-to-use tools to help developer visualize their widgets, which otherwise will take much longer. Widget books make these tools very simple and convenient to implement.
+
+Addons are helper tools for commonly used important features when developing an application such as displaying on different devices, themes etc.
+
+### Devices
+
+One of the most important features of Widgetbook is to be able to display widgets on different devices on the go, no need to rebuild the project every time we need to see changes on different devices.
+
+%[https://gist.github.com/Khanin-devmode/6ca651faafea347d2fce392884febb0f] 
+
+We add addons to `addons` parameters `Widgetbook.material` method. The code above adds iPhone 13mini and iPhone 13 Pro max to the widgetbook addon and also sets the initial device to iPhone 13 Pro max.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1702266176297/0bba0e5d-ed31-45af-b532-9bd5391bb4e7.png align="center")
+
+### Theme
+
+Most applications now require dark and light themes. Seeing how widgets display in each theme is crucial. Similar to devices addon, we add `MaterialThemeAddon` to addons in `Widgetbook.material` method.
+
+%[https://gist.github.com/Khanin-devmode/72baaef6c72b82801ce501ddc84d1728] 
+
+The code above creates instances of WidgetbookTheme for each light and dark theme. Supply them to `MaterialTheme` addon and set the initial theme to a light theme.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1702268404937/c8459798-b35b-4dd6-92f9-bc1abba0993e.gif align="center")
+
+## Knobs
+
+One of the reasons we use Widgetbook is to visualize how each state parameter effect Widget UI, Knobs are exactly what we need for this purpose. Knobs allow designers and developers to better understand the capabilities and parameters of the widget when reviews or start using the widget. We call `context.knobs` in WidgetbookUseCase class.
+
+%[https://gist.github.com/Khanin-devmode/9226a69aff7d49b1ef094dcd9ef30a84] 
+
+In the code above, we create two knobs which return double values for each width and height of the container.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1702276633420/c4e8afdd-2028-4557-87ec-6be9c08b16f4.gif align="center")
+
+There are various knobs for most of the return values, e.g. string, int, list&lt;T&gt;. Please check the official documentation of Widgetbook to see the full list of knob types available.  
+[https://docs.widgetbook.io/knobs/overview#available-knobs](https://docs.widgetbook.io/knobs/overview#available-knobs)
+
+## You are ready
+
+We have made a simple Widgetbook project as a starting point for your custom library. As a reminder, this project was created as a manual approach to use Widgetbook, without using any generator tools provided by Widgetbook. We created the structure of folders, components and use cases. Also includes addons such as themes and devices with powerful knobs feature. I hope you can get started with Widgetbook easily as I found it a very powerful tool for Flutter developers.
+
+## References
+
+* [https://docs.widgetbook.io/](https://docs.widgetbook.io/)
+    
+* Full code of the project.
+    
+
+%[https://gist.github.com/Khanin-devmode/c0174f9a623dfc2bc8660dcf85d211d8]
