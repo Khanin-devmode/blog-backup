@@ -5,6 +5,7 @@ seoDescription: "Implement dark mode in Flutter counter app using themes, toggle
 datePublished: Tue Sep 05 2023 15:43:16 GMT+0000 (Coordinated Universal Time)
 cuid: clm6hclwp000b09mk6j9y4fmm
 slug: easy-dark-mode-setup-in-flutter-counter-app-example
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1702539341299/07fa19c1-1ff0-4c05-ae3f-71001994a6b7.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1693929475990/3b70c15c-84d6-4c04-bbcd-523d2d730176.png
 tags: flutter, dark-mode
 
