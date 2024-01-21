@@ -70,7 +70,7 @@ For simplicity, I just changed the widgets folder to the src folder. In an actua
 
 Now users can only import what we export in custom widgets.dart. It is simple, yes, but without realizing this, your package will be a real hassle to maintain and not very aesthetically pleasing.
 
-# Additional Good Practice.
+# Additional Good Practices.
 
 ## Use `show`.
 
