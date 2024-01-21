@@ -1,0 +1,100 @@
+---
+title: "Controlling what to expose as public api in Flutter package."
+seoTitle: "Managing public API exposure in Flutter package"
+seoDescription: "Optimize Flutter API: put code in 'lib/src', use export files, apply 'show' for selective access"
+datePublished: Sun Jan 21 2024 11:02:20 GMT+0000 (Coordinated Universal Time)
+cuid: clrne2vng000309jy2nj047th
+slug: controlling-what-to-expose-as-public-api-in-flutter-package
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1705834825985/4990bbe9-48aa-4663-9d73-035b5a0b786f.png
+tags: dart, flutter, apis
+
+---
+
+TLDR from [https://docs.flutter.dev/packages-and-plugins/developing-packages](https://docs.flutter.dev/packages-and-plugins/developing-packages).
+
+> By convention, implementation code is placed under *lib/src*. Code under lib/src is considered private; other packages should never need to import `src/...`. To make APIs under lib/src public, you can export lib/src files from a file that’s directly under lib.
+
+# Put your files in `src` folder.
+
+When developing a package in Flutter, it's crucial to manage what classes are exposed to the user and to regulate how these classes are imported. Without such control, making updates to the package could become challenging and difficult to maintain due to potential conflicts arising from improper import paths. Let's delve into an example for clarity.
+
+I have worked on a project which has a lot of custom libraries, that had files with import tags that filled the page when it first opened. This is problematic in terms of maintainability and aesthetics. For instance, a new recruit comes to a project and is greeted with 30 import lines, and when they just want to rename or relocate a file, the app that uses this package breaks.
+
+The main problem is from importing classes, usually widgets, directly from the file, resulting in many import lines. Without the right setup, users will be able to import directly as classes in Dart are exposed as public by default. These problems can easily be prevented. Let's look at the following project structure.
+
+```plaintext
+ui_package_example_1/
+├── lib/
+│   ├── widgets/
+│   │   ├── custom_button.dart
+│   │   └── custom_text_field.dart
+│   │   └── custom_icon.dart
+│   ├── custom_widgets.dart
+├── pubspec.yaml
+└── README.md
+```
+
+```dart
+// custom_widgets.dart
+export '../lib/widgets/custom_button.dart';
+export '../lib/widgets/custom_text_field.dart';
+export '../lib/widgets/custom_icon.dart';
+```
+
+You might think creating export files, such as custom\_widgets.dart, will solve the issue. Yes, partially, custom\_widgets.dart will let users import only one file to be able to use all custom widgets. BUT the cause of the problem was not from adding an additional way to import. Even with this import file, users will still be able to import from the widget files directly. **The real problem is that these files are still exposed to users, and our code editor's IntelliSense even shows them the path to import directly**. **Even with strict guidelines not to import directly, if they are able to do so, they will, most likely unintentionally via IntelliSense.**
+
+The solution is easy, just put the file that we don't want to expose automatically in the `src` folder. Like the following structure.
+
+```plaintext
+ui_package_example_2/
+├── lib/
+│   ├── src/
+│   │   ├── custom_button.dart
+│   │   └── custom_textField.dart
+│   │   └── custom_icon.dart
+│   ├── custom_widgets.dart
+├── pubspec.yaml
+└── README.md
+```
+
+Update custom\_widgets.dart accordingly.
+
+```dart
+// custom_widgets.dart
+export '../lib/src/custom_button.dart';
+export '../lib/src/custom_text_field.dart';
+export '../lib/src/custom_icon.dart';
+```
+
+For simplicity, I just changed the widgets folder to the src folder. In an actual project, you will want to keep a folder structure that is meaningful for your project under the src folder.
+
+Now users can only import what we export in custom widgets.dart. It is simple, yes, but without realizing this, your package will be a real hassle to maintain and not very aesthetically pleasing.
+
+# Additional Good Practice.
+
+## Use `show`.
+
+In addition to utilizing the `src` folder structure, if your file has multiple classes and you want to export only a few of them, you can use `show`, like in the example below.
+
+```dart
+// custom_widgets.dart
+export '../lib/src/custom_button.dart' show CustomButton, buttonStyleEnum;
+export '../lib/src/custom_text_field.dart' show CustomTextFied;
+export '../lib/src/custom_icon.dart' show CustomIcon;
+```
+
+You might have heard about `part` to manage libraries instead of `show`. The Dart guideline suggests avoiding the use of `part`.
+
+> **Note:** You may have heard of the `part` directive, which allows you to split a library into multiple Dart files. We recommend that you avoid using `part` and create mini libraries instead.
+
+## Import within package.
+
+Dart recommends the following, and I agree to align with this just because it feels weird to import its own package to use in the package by using package import. ;)
+
+> When importing a library file from your own package, use a relative path when both files are inside of lib, or when both files are outside of lib. Use `package:` when the imported file is in lib and the importer is outside.
+
+# Conclusion
+
+The solution for the problem is very simple. But I still want to share it as I have seen how it impacts our code structure in a large project despite it being clearly stated in the official documentation. Everything in this article is referenced from the following official Dart document. I just shared how it really impacts our code in case we might forget or be overwhelmed by something else.
+
+* [https://dart.dev/guides/libraries/create-packages](https://dart.dev/guides/libraries/create-packages)
