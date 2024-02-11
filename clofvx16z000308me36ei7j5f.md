@@ -5,6 +5,7 @@ seoDescription: "Master Flutter TextField: minLines & maxLines properties, singl
 datePublished: Wed Nov 01 2023 15:00:24 GMT+0000 (Coordinated Universal Time)
 cuid: clofvx16z000308me36ei7j5f
 slug: working-with-minlines-and-maxlines-properties-in-flutter-textfield
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1707666441389/910a900d-4f3a-4788-bcd8-ad40a049797d.webp
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1698850780773/c7ac0b59-5330-49b1-990b-007a18b4120e.gif
 tags: flutter
 
