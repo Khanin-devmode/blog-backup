@@ -10,7 +10,7 @@ tags: flutter, form-validation
 
 ---
 
-*TLDR;* `FormState` *จะเก็บค่า state เช่นการ validate สำหรับฟอร์มทั้งฟอร์ม แต่* `FormFieldState` *จะเก็บค่า state สำหรับ* `TextFormField` *เพียงอันเดียว*
+*TLDR;*`FormState`*จะเก็บค่า state เช่นการ validate สำหรับฟอร์มทั้งฟอร์ม แต่*`FormFieldState`*จะเก็บค่า state สำหรับ*`TextFormField`*เพียงอันเดียว*
 
 ในตอนที่เราโค้ดฟอร์มในแอพพลิเคชั่นของเรา เราจะต้องใช้ `GlobalKey` ที่ cast ด้วย `FormState` , `GlobalKey<FormState>`,หรือ `FormFieldState` , `GlobalKey<FormFieldState>` เพื่อใช้เช็ค state ของสถานะฟอร์มของเรา เช่นการ validate หรือ ไม่ validate แล้วสอง Class นี้มันใช้ต่างกันอย่างไรใช้ตอนไหน เราจะมาดูจากตัวอย่างด้านล่างกัน
 
@@ -18,7 +18,7 @@ tags: flutter, form-validation
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1709106516410/260e5b16-a765-4d16-b5fb-ca15a4ba1cc0.png align="center")
 
-ในทำนองเดียวกัน FormFieldState ก็จะเป็นการใช้เฉพาะสำหรับวิดเจ็ดประเภท FormField เท่านั้น ซึ่ง TextFormField ก็เป็น class ที่สร้างต่อมาจาก FormField ทำให้สามารถใช้ FormFieldState ได้ และหากเราใน FormState มาใช้กับ TextFormField ค่า currentState ของ FormState ก็จะเป็น null เช่นกัน เพราะใช้ไม่ถูกประเภทกับ Type ที่รองรับ
+ในทำนองเดียวกัน `FormFieldState` ก็จะเป็นการใช้เฉพาะสำหรับวิดเจ็ดประเภท `FormField` เท่านั้น ซึ่ง `TextFormField` ก็เป็น class ที่สร้างต่อมาจาก `FormField` ทำให้สามารถใช้ `FormFieldState` ได้ และหากเรานำ `FormState` มาใช้กับ `TextFormField` ค่า currentState ของ `FormState` ก็จะเป็น null เช่นกัน เพราะใช้ไม่ถูกประเภทกับ Type ที่รองรับ
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1709106239195/1c2c10ab-7b6d-41b8-9421-3c94d3dfa988.png align="center")
 
@@ -26,7 +26,7 @@ tags: flutter, form-validation
 
 # แถม TextField vs. TextFormField
 
-*TLDR;* `TextFormField` *ใช้ร่วมกับ* `Form` *เพื่อการ validate ถ้าต้องการ input text ธรรมดาใช้* `TextField`
+*TLDR;*`TextFormField`*ใช้ร่วมกับ*`Form`*เพื่อการ validate ถ้าต้องการ input text ธรรมดาใช้*`TextField`
 
 สมมุติว่าเราไม่มีวิดเจ็ต `TextFormField` ในการสร้าง `Form` สิ่งที่เราต้องทำเพื่อให้ validate `TextField` ได้คือเราต้องครอบ `TextField` วิดเจ็ตด้วย `FormField` วิดเจ็ตอีกที และเนื่องจากการ validate `TextField` เป็นเรื่องที่ทุกแอพต้องใช้บ่อยๆ ทาง Flutter เลยรวมมาให้เป็น `TextFormField` เพื่ออำนวยความสะดวกให้กับ Flutter ไปเลย สรุปง่ายๆก็คือ ถ้าเราต้องการให้ `TextField` มีการ validate หรือใช้ในฟอร์มให้ใช้ `TextFormField` ถ้านอกเหนือจากนั้นก็ใช้ `TextField` ธรรมดาได้เลย
 
