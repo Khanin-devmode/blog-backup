@@ -1,6 +1,6 @@
 ---
 title: "แนะนำการใช้ Bloc ด้วยการสร้างเคาน์เตอร์แอพในหน้าเดียว แบบจบๆ"
-seoTitle: "สร้างแอพเคาน์เตอร์ด้วย Bloc ง่ายๆ"
+seoTitle: "สร้างแอพเคาน์เตอร์ด้วย Bloc แบบง่ายๆ"
 seoDescription: "Learn how to use the Bloc library for efficient state management in Flutter through a simplified single-page counter app example"
 datePublished: Tue Apr 16 2024 15:08:49 GMT+0000 (Coordinated Universal Time)
 cuid: clv2ir4dr001209jq9zb6guz7
