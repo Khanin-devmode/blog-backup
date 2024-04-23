@@ -10,6 +10,15 @@ slug: bloc-event-base
 
 หัวข้อที่แตกต่างกันจะเป็นในส่วนการสร้าง class ที่เก็บ state จาก Cubit เป็น Bloc การเรียกใช้ state ใน Bloc
 
+## การใช้งานในส่วนที่เหมือนกันกับ Cubit
+
+ในหัวข้อนี้ผมจะไม่ได้ยกโค้ดขึ้นมาเป็นตัวอย่างเพราะกลัวว่าจะทำให้ซับสนและซ้ำซ้อนกับของเดิมได้ อยากให้โฟกันกับจุดที่ต่างกันเท่านั้นจริงๆดีกว่า ซึ่งหัวข้อที่เหมือนกันกับการใช้ก็คือ
+
+* การ import package
+    
+* การยัดเยียด state ไปใน widget tree ด้วย BlocProvider
+    
+
 ## การใช้งานที่แตกต่างจาก Cubit
 
 ### สร้าง Bloc class และกำหนด event
@@ -50,5 +59,7 @@ floatingActionButton: Column(
         ],
       ),
 ```
+
+## ตัวอย่าง Code
 
 %[https://gist.github.com/Khanin-devmode/a2b03574ad7ed3de88c366e455def5c8]
