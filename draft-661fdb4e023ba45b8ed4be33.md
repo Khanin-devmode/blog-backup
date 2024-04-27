@@ -1,6 +1,7 @@
 ---
 title: "แนะนำการใช้ Bloc ด้วยเคานท์เตอร์แอพแบบ event-base ในไฟล์เดียวจบๆ (เหมือนเดิม)"
 slug: bloc-event-base
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1714215494856/b1563d2e-ef16-4eaf-b9b2-5a1113f8c986.webp
 
 ---
 
