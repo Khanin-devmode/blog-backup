@@ -5,6 +5,7 @@ seoDescription: "Learn how to install Freqtrade in a new Linux distro using WSL,
 datePublished: Fri Nov 15 2024 13:36:59 GMT+0000 (Coordinated Universal Time)
 cuid: cm3is9gys001709lc3bet33vo
 slug: installing-freqtradefreqai-in-new-linux-distro
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1731677999171/7e77ca29-7153-4ae3-bc31-628b651139e1.webp
 tags: linux, wsl, freqtrade
 
 ---
