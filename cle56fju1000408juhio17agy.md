@@ -94,4 +94,4 @@ Implementing Firebase in Flutter is a straightforward process, you install fireb
 * Then add debug keys from the result to SHA certificate fingerprint for Android application in Firebase. The app now sign-in successfully with Google on debug version of Android.
     
 
-The most tedius process for me was to figure out what was the real problem that the error occurs. As the requirement is not clearly state in google\_sign\_in package but in google play service clieth auth guideline which is right. However a link as useful resources in pacakge would save so much time from googling. Hope this article helpful for who might try implementing Firebase Auth for very first time. Cheers!
+The most tedious process for me was to figure out what was the real problem that the error occurs. As the requirement is not clearly state in google\_sign\_in package but in google play service client auth guideline which is right. However a link as useful resources in package would save so much time from googling. Hope this article helpful for who might try implementing Firebase Auth for very first time. Cheers!
