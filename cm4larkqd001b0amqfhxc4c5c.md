@@ -77,7 +77,7 @@ FilterQuality จะเป็นตัวช่วยทำให้การเ
 
 หวังว่าบทความนี้จะทำให้เข้าใจถึงจุดประสงค์ของ FilterQuality และหลักการใช้งานของ FilterQuality ได้มากขึ้นนะครับ และถ้าอยากลองนำโค้ดไปทดลองด้วยตัวเองสามารถ clone จากที่ลิงค์ Github ด้านล่างได้เลยครับ
 
-### References
+## References
 
 * Github: [https://github.com/Khanin-devmode/flutter-filter-quality-example.git](https://github.com/Khanin-devmode/flutter-filter-quality-example.git)
     
