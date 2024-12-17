@@ -6,6 +6,7 @@ datePublished: Thu Dec 12 2024 12:30:11 GMT+0000 (Coordinated Universal Time)
 cuid: cm4larkqd001b0amqfhxc4c5c
 slug: filterquality-image-flutter-demo
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1733991392056/b957c167-1cc7-44bf-9693-f0579d508bb6.png
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1734406235811/c93541f8-9399-4907-999f-c3b09c417bcd.png
 tags: flutter, mobile-development
 
 ---
